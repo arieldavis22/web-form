@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="handleSubmit">
     <label>Email:</label>
     <input type="email" required v-model="email">
     <label>Password:</label>
@@ -71,6 +71,9 @@ export default {
       },
       deleteSkill(skillValue) {
         this.skills = this.skills.filter(skill => skill !== skillValue)
+      },
+      handleSubmit() {
+        console.log('form submitted');
       }
     }
 }
